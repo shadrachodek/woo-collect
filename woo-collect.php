@@ -17,8 +17,13 @@ if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
-define('COLLECT_MAIN_FILE', __FILE__);
-define('COLLECT_VERSION', '1.0.0');
+if (!defined('COLLECT_MAIN_FILE')) {
+    define('COLLECT_MAIN_FILE', __FILE__);
+}
+
+if (!defined('COLLECT_VERSION')) {
+    define('COLLECT_VERSION', '1.0.0');
+}
 
 
 if (!in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) return;

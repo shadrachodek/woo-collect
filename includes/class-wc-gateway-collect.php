@@ -170,7 +170,6 @@ class WC_Gateway_Collect extends WC_Payment_Gateway {
     protected function setup_properties()
     {
         $this->id = 'collect';
-      //  $this->icon = apply_filters('woocommerce_collect_icon', plugins_url('../assets/icon.png', __FILE__));
         $this->method_title = __('Collect', 'woo-collect');
         $this->method_description = sprintf( __( 'Collect platform is built to simplify and accelerate African payments. <a href="%1$s" target="_blank">Sign up</a> for a Collect account, and <a href="%2$s" target="_blank">get your API keys</a>.', 'woo-collect' ), 'https://collect.africa', 'https://app.collect.africa/settings/keys' );
         $this->has_fields = false;
@@ -193,7 +192,7 @@ class WC_Gateway_Collect extends WC_Payment_Gateway {
                 'title' => __('Title', 'woo-collect'),
                 'type' => 'text',
                 'description' => __('Payment method description that the customer will see on your checkout.', 'woo-collect'),
-                'default' => __('Collect', 'woo-collect'),
+                'default' => __('Bank Transfer/Opay/Barter', 'woo-collect'),
                 'desc_tip' => true,
             ),
             'description' => array(
@@ -420,11 +419,25 @@ Once the LIVE MODE is enabled on your Collect account uncheck this.', 'woo-colle
     }
 
     public function admin_options() {
+        ?>
 
-        echo '<h4><strong>';
-        printf(__('Optional: To avoid situations where bad network makes it impossible to verify transactions, set your webhook URL <a href="%1$s" target="_blank" rel="noopener noreferrer">here</a> to the URL below<span style="color: red"><pre><code>%2$s</code></pre></span>', 'woo-collect'), 'https://app.collect.africa/settings/keys', WC()->api_request_url('WC_Collect_Webhook'));
-        echo '</h4></strong>';
-        parent::admin_options();
+        <h2><?php _e( 'Collect', 'woo-collect' ); ?>
+            <?php
+            if ( function_exists( 'wc_back_link' ) ) {
+                wc_back_link( __( 'Return to payments', 'woo-collect' ), admin_url( 'admin.php?page=wc-settings&tab=checkout' ) );
+            }
+            ?>
+        </h2>
+
+        <h4>
+            <strong><?php printf( __( 'Optional: To avoid situations where bad network makes it impossible to verify transactions, set your webhook URL <a href="%1$s" target="_blank" rel="noopener noreferrer">here</a> to the URL below<span style="color: red"><pre><code>%2$s</code></pre></span>', 'woo-collect' ), 'https://app.collect.africa/settings/keys', WC()->api_request_url( 'WC_Collect_Webhook' ) ); ?></strong>
+        </h4>
+
+        <?php
+
+        echo '<table class="form-table">';
+        $this->generate_settings_html( $this->get_form_fields() );
+        echo '</table>';
 
     }
 
@@ -441,7 +454,8 @@ Once the LIVE MODE is enabled on your Collect account uncheck this.', 'woo-colle
             return;
         }
 
-        $order_key = urldecode( $_GET['key'] );
+        $order_key = sanitize_key( $_GET['key'] );
+
         $order_id  = absint( get_query_var( 'order-pay' ) );
 
         $order = wc_get_order( $order_id );
@@ -475,7 +489,7 @@ Once the LIVE MODE is enabled on your Collect account uncheck this.', 'woo-colle
             $currency      = method_exists( $order, 'get_currency' ) ? $order->get_currency() : $order->order_currency;
 
 
-            if ( $the_order_id == $order_id && $the_order_key == $order_key ) {
+            if ( $the_order_id == $order_id && strtolower($the_order_key) == $order_key ) {
 
                 $params['email']      = $email;
                 $params['first_name'] = $first_name;
@@ -877,7 +891,7 @@ Once the LIVE MODE is enabled on your Collect account uncheck this.', 'woo-colle
 
                 } else {
 
-                    $order_details = explode( '_', $_REQUEST['reference'] );
+                    $order_details = explode( '_', sanitize_text_field( $_REQUEST['reference'] ) );
 
                     $order_id = (int) $order_details[0];
 
