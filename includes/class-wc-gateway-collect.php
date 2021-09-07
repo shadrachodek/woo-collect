@@ -732,11 +732,15 @@ Once the LIVE MODE is enabled on your Collect account uncheck this.', 'woo-colle
 
         echo '<p>' . __( 'Thank you for your order, please click the button below to pay with Collect.', 'woo-collect' ) . '</p>';
 
-        echo '<div id="collect_form"><form id="order_review" method="get" action="' . WC()->api_request_url( 'WC_Gateway_Collect' ) . '"></form><button class="button" id="collect-payment-button">' . __( 'Pay Now', 'woo-collect' ) . '</button>';
-
+        echo '<div id="collect_form">';
+        echo '<form method="post">';
+        echo '<button type="submit" id="collect-payment-button">' . __( 'Pay Now', 'woo-collect' ) . '</button>';
         if ( ! $this->remove_cancel_order_button ) {
-            echo '  <a class="button cancel" id="collect-cancel-payment-button" href="' . esc_url( $order->get_cancel_order_url() ) . '">' . __( 'Cancel order &amp; restore cart', 'woo-collect' ) . '</a></div>';
+            echo '  <a class="button cancel" id="collect-cancel-payment-button" href="' . esc_url( $order->get_cancel_order_url() ) . '">' . __( 'Cancel order &amp; restore cart', 'woo-collect' ) . '</a>';
         }
+        echo '</form>';
+
+
 
         echo '</div>';
 
