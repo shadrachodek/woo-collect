@@ -192,7 +192,7 @@ class WC_Gateway_Collect extends WC_Payment_Gateway {
                 'title' => __('Title', 'woo-collect'),
                 'type' => 'text',
                 'description' => __('Payment method description that the customer will see on your checkout.', 'woo-collect'),
-                'default' => __('Bank Transfer/Opay/Barter', 'woo-collect'),
+                'default' => __('Collect', 'woo-collect'),
                 'desc_tip' => true,
             ),
             'description' => array(
