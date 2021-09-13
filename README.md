@@ -28,7 +28,7 @@ This is a Collect payment gateway for WooCommerce.
 
 The platform built to simplify and accelerate African payments
 
-To signup for a Collect Merchant account visit their website by clicking [here](https://collect.africa)
+To sign up for a Collect Merchant account visit their website by clicking [here](https://collect.africa)
 
 Collect WooCommerce Payment Gateway allows you to accept payment on your WooCommerce store using Mastercard, Visa, Verve, USSD, Mobile Money, Bank Transfer, Opay, Bank Accounts, Barter.
 
@@ -49,28 +49,31 @@ With this Collect WooCommerce Payment Gateway plugin, you will be able to accept
 
 
 ### Automatic Installation
-* 	Login to your WordPress Admin area
-* 	Go to "Plugins > Add New" from the left hand menu
-* 	In the search box type __Collect Payment Gateway for WooCommerce__
-*	From the search result you will see __Collect Payment Gateway for WooCommerce__ click on __Install Now__ to install the plugin
-*	A popup window will ask you to confirm your wish to install the Plugin.
-*	After installation, activate the plugin.
-* 	Open the settings page for WooCommerce and click the "Checkout" tab.
-* 	Click on the __Collect_ link from the available Checkout Options
-*	Configure your __Collect Payment Gateway__ settings. See below for details.
+1. Login to your WordPress Admin area
+2. Go to __Plugins__ > __Add New__ from the from the top left menu.
+3. In the search box type __Collect Payment Gateway for WooCommerce__
+4. From the search result you will see __Collect Payment Gateway for WooCommerce__ click on __Install Now__ to install the plugin
+5. A popup window will ask you to confirm your wish to install the Plugin.
+6. After installation, activate the plugin.
+7. Open the settings page for WooCommerce and click the __Payments__ tab.
+8. Click on the __Collect_ link from the available Checkout Options
+9. Configure your __Collect Payment Gateway__ settings. See below for details.
 
 
 ### Manual Installation
-1. 	Download the plugin zip file
-2. 	Login to your WordPress Admin. Click on "Plugins > Add New" from the left hand menu.
-3.  Click on the "Upload" option, then click "Choose File" to select the zip file from your computer. Once selected, press "OK" and press the "Install Now" button.
-4.  Activate the plugin.
-5. 	Open the settings page for WooCommerce and click the "Checkout" tab.
-6. 	Click on the __Collect__ link from the available Checkout Options
-7.	Configure your __Collect Payment Gateway__ settings. See below for details.
+1. Download the plugin zip file
+2. Login to your WordPress Admin. Click on __Plugins__ > __Add New__ from the top left menu.
+3. Click on the "Upload" option, then click "Choose File" to select the zip file from your computer. Once selected, press "OK" and press the "Install Now" button.
+4. Activate the plugin.
+5. Open the settings page for WooCommerce and click the "Payments" tab.
+6. Click on the __Collect__ link from the available Checkout Options
+7. Configure your __Collect Payment Gateway__ settings. See below for details.
 
 ### Configure the plugin
 To configure the plugin, go to __WooCommerce > Settings__ from the left hand menu, then click __Checkout__ from the top tab. You will see __Collect__ as part of the available Checkout Options. Click on it to configure the payment gateway.
+* Go to __WooCommerce  > Settings__ and click on the Payments tab
+* You’ll see __Collect__ listed along with your other payment methods.
+* Click __Set Up__ to configure the plugin. There is a selection of options on the screen. * * Read what each one does below.
 
 * __Enable/Disable__ - check the box to enable Collect Payment Gateway.
 * __Title__ - allows you to determine what your customers will see this payment option as on the checkout page.
@@ -81,6 +84,14 @@ To configure the plugin, go to __WooCommerce > Settings__ from the left hand men
 * __Live Secret Key__ - Enter your Live Secret Key here. Get your API keys from your Collect account under Settings > Developer/API
 * __Live Public Key__ - Enter your Live Public Key here. Get your API keys from your Collect account under Settings > Developer/API
 * Click on __Save Changes__ for the changes you made to be effected.
+
+Some account might be experiencing poor network connections, which can sometimes affect order status updates after a transaction, we strongly recommend that you set a [Webhook URL](https://app.collect.africa/settings/keys) on your Collect dashboard. This way, whenever a transaction is complete on your store, we’ll send a notification to the __Webhook URL__, which will update the order and mark it as paid. You can set this up by using the URL in red at the top of the Settings page. Just copy the URL and save it as your webhook URL on your Collect dashboard under __Settings__ > __API Keys & Webhooks__ tab.
+
+If you do not find __Collect__ on the Payment method options, please go through the settings again and ensure that:
+
+* You’ve checked the “Enable/Disable” checkbox
+* You’ve entered your API Keys in the appropriate field
+* You’ve clicked on Save Changes during setup
 
 
 ## Frequently Asked Questions
