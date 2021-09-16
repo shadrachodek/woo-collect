@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Collect Payment Gateway for WooCommerce
+ * Plugin Name: Collect Payment Gateway Plugin for WooCommerce
  * Plugin URI: https://www.collect.africa
  * Author: Shadrach Odekhiran
  * Author URI: https://shadrachodek.com

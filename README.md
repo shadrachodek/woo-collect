@@ -1,8 +1,8 @@
 
-<p align="center"><a href="https://collect.africa" target="_blank"><img src="https://res.cloudinary.com/collect-africa/image/upload/v1629734986/Collect_paymement_options_xb3a9n.png" width="400"></a></p>
+<p align="center"><a href="https://collect.africa" target="_blank"><img src="https://github.com/shadrachodek/woo-collect/blob/master/assets/images/collect-hero.jpg" width="400"></a></p>
 
 
-# Collect Payment Gateway for WooCommerce
+# Collect Payment Gateway Plugin for WooCommerce
 
 **Contributors:** shadrachodek
 
@@ -20,19 +20,14 @@
 
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
-Collect Payment Gateway for WooCommerce made Local payments in African markets easy
+Local payments in African markets made easy
 
 ## Description
 
-This is a Collect payment gateway for WooCommerce.
+Collect makes it easy for African businesses to accept payments from their customers through local payment methods. Integrate Collect today and let your customers pay you with their preferred payment method.
 
-The platform built to simplify and accelerate African payments
+With the Collect WooCommerce Payment Gateway plugin, you will be able to accept the following payment methods in your shop:
 
-To sign up for a Collect Merchant account visit their website by clicking [here](https://collect.africa)
-
-Collect WooCommerce Payment Gateway allows you to accept payment on your WooCommerce store using Mastercard, Visa, Verve, USSD, Mobile Money, Bank Transfer, Opay, Bank Accounts, Barter.
-
-With this Collect WooCommerce Payment Gateway plugin, you will be able to accept the following payment methods in your shop:
 
 * __Mastercard__
 * __Visa__
@@ -41,8 +36,16 @@ With this Collect WooCommerce Payment Gateway plugin, you will be able to accept
 * __Mobile Money__
 * __Bank Transfer__
 * __Opay__
-* __Bank Account__
+* __Online Banking__
 * __Barter__
+
+## Why Collect?
+* Collect offers the best pricing for local payment methods so your customers can enjoy low transaction fees when they pay with Collect.
+* All your customer and transaction data in one simple and elegant data so you can understand your customers' behavior and make smart decisions.
+* Responsive customer support
+* Easy to understand and well-documented APIs to build your custom payment experiences
+
+Sign up for a Collect Merchant account by clicking [here](https://collect.africa).
 
 
 ## Installation
