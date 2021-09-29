@@ -102,6 +102,20 @@ class WC_Gateway_Collect extends WC_Payment_Gateway {
     public $payment_page;
 
     /**
+     * Collect test url.
+     *
+     * @var string
+     */
+    public $test_url;
+
+    /**
+     * Collect live url.
+     *
+     * @var string
+     */
+    public $live_url;
+
+    /**
      * Constructor for the gateway.
      */
     public function __construct() {
@@ -141,6 +155,9 @@ class WC_Gateway_Collect extends WC_Payment_Gateway {
 
         $this->public_key = $this->testmode ? $this->test_public_key : $this->live_public_key;
         $this->secret_key = $this->testmode ? $this->test_secret_key : $this->live_secret_key;
+
+        $this->live_url = "https://api.collect.africa";
+        $this->test_url = "https://devapi.collect.africa";
 
         // Hooks
         add_action( 'wp_enqueue_scripts', array( $this, 'payment_scripts' ) );
@@ -700,7 +717,9 @@ Once the LIVE MODE is enabled on your Collect account uncheck this.', 'woo-colle
             'timeout' => 60,
         );
 
-        $collect_url = 'https://devapi.collect.africa/payments/initialize';
+        // get payment initialize url
+        $collect_url = $this->testmode ? $this->test_url : $this->live_url;
+        $collect_url = $collect_url . '/payments/initialize';
 
         $request = wp_remote_post($collect_url, $args);
         error_log(print_r(wp_remote_retrieve_response_code( $request ) , true));
@@ -799,7 +818,9 @@ Once the LIVE MODE is enabled on your Collect account uncheck this.', 'woo-colle
         @ob_clean();
 
         if ($collect_reference) {
-            $collect_get_payment_url = 'https://devapi.collect.africa/payments/' . $collect_reference;
+            
+            $collect_url = $this->testmode ? $this->test_url : $this->live_url;
+            $collect_get_payment_url = $collect_url . '/payments/' . $collect_reference;
 
             $headers = array(
                 'Authorization' => 'Bearer ' . $this->secret_key,
