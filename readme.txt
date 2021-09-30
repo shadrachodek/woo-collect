@@ -3,7 +3,7 @@ Contributors: shadrachodek
 Tags: collect, woocommerce, payment gateway, shadrachodek plugins, opay, barter, nigeria, naira, mastercard, visa, collect africa
 Requires at least: 4.7
 Tested up to: 5.8
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -86,6 +86,9 @@ If you do not find **Collect** on the Payment method options, please go through 
 
 = 1.0.0 - August 23, 2021 =
 *   First release
+
+= 1.0.1 - September 29, 2021 =
+*   Fix: Live URL not auto switch for live mode on payment redirect
 
 
 == Screenshots ==

@@ -5,7 +5,7 @@
  * Author: Shadrach Odekhiran
  * Author URI: https://shadrachodek.com
  * Description: WooCommerce payment gateway for Collect
- * Version: 1.0.0
+ * Version: 1.0.1
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * text-domain: woo-collect
@@ -22,7 +22,7 @@ if (!defined('COLLECT_MAIN_FILE')) {
 }
 
 if (!defined('COLLECT_VERSION')) {
-    define('COLLECT_VERSION', '1.0.0');
+    define('COLLECT_VERSION', '1.0.1');
 }
 
 

@@ -12,7 +12,7 @@
 
 **Tested up to:** 5.8
 
-**Stable tag:** 1.0.0
+**Stable tag:** 1.0.1
 
 **Requires PHP:** 5.6
 
@@ -110,6 +110,8 @@ If you do not find __Collect__ on the Payment method options, please go through 
 
 ### 1.0.0 - August 23, 2021
 * First release
+### 1.0.1 - September 29, 2021
+* Fix: Live URL not auto switch for live mode on payment redirect
 
 
 ## Screenshots ##
